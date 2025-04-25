@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\evanw\\onedrive\\documents\\github\\cpu-simulator-gui\\cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\evanw\\onedrive\\documents\\github\\cpu-simulator-gui\\cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,30 +42,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Algorithms.cs",
               "DocumentMoniker": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\CpuSchedulingWinForms\\Algorithms.cs",
               "RelativeDocumentMoniker": "CpuSchedulingWinForms\\Algorithms.cs",
               "ToolTip": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\CpuSchedulingWinForms\\Algorithms.cs",
               "RelativeToolTip": "CpuSchedulingWinForms\\Algorithms.cs",
-              "ViewState": "AQIAAFABAAAAAAAAAAAAAG0BAAAJAAAA",
+              "ViewState": "AQIAAE0BAAAAAAAAAAAgwLoBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T18:15:50.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CpuScheduler.cs",
               "DocumentMoniker": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\CpuSchedulingWinForms\\CpuScheduler.cs",
               "RelativeDocumentMoniker": "CpuSchedulingWinForms\\CpuScheduler.cs",
               "ToolTip": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\CpuSchedulingWinForms\\CpuScheduler.cs",
               "RelativeToolTip": "CpuSchedulingWinForms\\CpuScheduler.cs",
-              "ViewState": "AQIAAGUBAAAAAAAAAAA4wHgBAAAJAAAA",
+              "ViewState": "AQIAAIIBAAAAAAAAAAAAAI8BAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T18:15:50.05Z",
               "EditorCaption": ""
@@ -105,8 +105,7 @@
               "RelativeToolTip": "CpuSchedulingWinForms\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:15:50.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T18:15:50.051Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "ToolTip": "C:\\Users\\evanw\\OneDrive\\Documents\\GitHub\\CPU-Simulator-GUI\\CpuSchedulingWinForms\\Form1.cs [Design]",
               "RelativeToolTip": "CpuSchedulingWinForms\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:15:50.051Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-25T18:15:50.051Z"
             },
             {
               "$type": "Document",
@@ -130,8 +128,7 @@
               "RelativeToolTip": "CpuSchedulingWinForms\\ModifyProgressBarColor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:15:50.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T18:15:50.249Z"
             },
             {
               "$type": "Document",

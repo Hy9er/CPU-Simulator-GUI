@@ -347,16 +347,97 @@ namespace CpuSchedulingWinForms
             int np = Convert.ToInt16(userInput);
             int i, counter = 0;
             double total = 0.0;
-            double timeQuantum;
+           
             double waitTime = 0, turnaroundTime = 0;
             double averageWaitTime, averageTurnaroundTime;
-            double[] arrivalTime = new double[10];
-            double[] burstTime = new double[10];
-            double[] temp = new double[10];
+
+            double[] arrivalTime = new double[np];
+            double[] burstTime = new double[np];        
+            //remaining
+            double[] temp = new double[np]; 
             int x = np;
 
-            DialogResult result = MessageBox.Show("Round Robin Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Shortest Remaing Time First Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
+
+            if (result == DialogResult.Yes)
+            {
+                for (i = 0; i < np; i++)
+                {
+                    string arrivalInput =
+                            Microsoft.VisualBasic.Interaction.InputBox("Enter arrival time: ",
+                                                               "Arrival time for P" + (i + 1),
+                                                               "",
+                                                               -1, -1);
+
+                    arrivalTime[i] = Convert.ToInt64(arrivalInput);
+
+                    string burstInput =
+                            Microsoft.VisualBasic.Interaction.InputBox("Enter burst time: ",
+                                                               "Burst time for P" + (i + 1),
+                                                               "",
+                                                               -1, -1);
+
+                    burstTime[i] = Convert.ToInt64(burstInput);
+
+                    temp[i] = burstTime[i];
+                }
+
+                while (x != 0)
+                {
+                    int smallest = -1;
+                    double shortest = 10000;
+
+                    for (i = 0; i < np; i++)
+                    {
+                        if (arrivalTime[i] <= total && temp[i] > 0 && temp[i] < shortest)
+                        {
+                            shortest = temp[i];
+                            smallest = i;
+                        }
+                    }
+
+                    if (smallest == -1)
+                    {
+                        total++; 
+                        continue;
+                    }
+
+                    temp[smallest] -= 1;
+                    total++;
+
+                    if (temp[smallest] == 0)
+                    {
+                        x--;
+
+                        double completionTime = total;
+                        double tat = completionTime - arrivalTime[smallest];
+                        double wt = tat - burstTime[smallest];
+
+                        MessageBox.Show("Turnaround time for Process " + (smallest + 1) + " : " + tat,
+                                        "Turnaround time for Process " + (smallest + 1),
+                                        MessageBoxButtons.OK);
+
+                        MessageBox.Show("Wait time for Process " + (smallest + 1) + " : " + wt,
+                                        "Wait time for Process " + (smallest + 1),
+                                        MessageBoxButtons.OK);
+
+                        turnaroundTime += tat;
+                        waitTime += wt;
+                    }
+
+
+                }
+
+
+            }
+
+
+            averageWaitTime = Convert.ToInt64(waitTime / np);
+            averageTurnaroundTime = Convert.ToInt64(turnaroundTime / np);
+
+            MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
+            MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
 
         }
 
