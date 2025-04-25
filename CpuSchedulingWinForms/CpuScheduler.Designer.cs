@@ -49,6 +49,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cpuSchedulerTab = new System.Windows.Forms.TabPage();
+            this.HRRN = new System.Windows.Forms.Button();
+            this.SRTF = new System.Windows.Forms.Button();
             this.btnRoundRobin = new System.Windows.Forms.Button();
             this.restartApp = new System.Windows.Forms.Label();
             this.btnPriority = new System.Windows.Forms.Button();
@@ -220,6 +222,7 @@
             this.listView1.Size = new System.Drawing.Size(347, 143);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // progressBar2
             // 
@@ -313,6 +316,8 @@
             this.cpuSchedulerTab.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cpuSchedulerTab.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpuSchedulerTab.BackgroundImage")));
             this.cpuSchedulerTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cpuSchedulerTab.Controls.Add(this.HRRN);
+            this.cpuSchedulerTab.Controls.Add(this.SRTF);
             this.cpuSchedulerTab.Controls.Add(this.btnRoundRobin);
             this.cpuSchedulerTab.Controls.Add(this.restartApp);
             this.cpuSchedulerTab.Controls.Add(this.btnPriority);
@@ -327,6 +332,26 @@
             this.cpuSchedulerTab.Size = new System.Drawing.Size(501, 413);
             this.cpuSchedulerTab.TabIndex = 1;
             this.cpuSchedulerTab.Text = "CPU Scheduler";
+            // 
+            // HRRN
+            // 
+            this.HRRN.Location = new System.Drawing.Point(115, 355);
+            this.HRRN.Name = "HRRN";
+            this.HRRN.Size = new System.Drawing.Size(75, 23);
+            this.HRRN.TabIndex = 15;
+            this.HRRN.Text = "HRRN";
+            this.HRRN.UseVisualStyleBackColor = true;
+            this.HRRN.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // SRTF
+            // 
+            this.SRTF.Location = new System.Drawing.Point(16, 355);
+            this.SRTF.Name = "SRTF";
+            this.SRTF.Size = new System.Drawing.Size(75, 23);
+            this.SRTF.TabIndex = 13;
+            this.SRTF.Text = "SRTF";
+            this.SRTF.UseVisualStyleBackColor = true;
+            this.SRTF.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btnRoundRobin
             // 
@@ -587,5 +612,7 @@
         private System.Windows.Forms.Button btnRoundRobin;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button HRRN;
+        private System.Windows.Forms.Button SRTF;
     }
 }

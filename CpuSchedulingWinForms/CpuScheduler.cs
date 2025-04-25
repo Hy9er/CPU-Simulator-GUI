@@ -359,5 +359,21 @@ namespace CpuSchedulingWinForms
         {
             this.txtCodeInput.Clear();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //Shortest Remaining Time First
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+        //Highest Response Ratio Next
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

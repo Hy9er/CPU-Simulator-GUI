@@ -339,7 +339,33 @@ namespace CpuSchedulingWinForms
                 MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
                 MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
             }
+
         }
+
+        public static void SRTF(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            int i, counter = 0;
+            double total = 0.0;
+            double timeQuantum;
+            double waitTime = 0, turnaroundTime = 0;
+            double averageWaitTime, averageTurnaroundTime;
+            double[] arrivalTime = new double[10];
+            double[] burstTime = new double[10];
+            double[] temp = new double[10];
+            int x = np;
+
+            DialogResult result = MessageBox.Show("Round Robin Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+
+        }
+
+        public static void HRRN(string userInput)
+        {
+
+        }
+
+
     }
 }
 
