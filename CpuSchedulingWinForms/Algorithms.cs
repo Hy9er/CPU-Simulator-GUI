@@ -522,8 +522,14 @@ namespace CpuSchedulingWinForms
                         finished[current] = true;
                         counter++;
 
-                        MessageBox.Show("Process " + (current + 1) + " completed.\nTAT = " + tat + "\nWT = " + wt, "Process Info", MessageBoxButtons.OK);
-                    }
+                    MessageBox.Show("Turnaround time for Process " + (current + 1) + " : " + tat,
+                                    "Turnaround time for Process " + (current + 1),
+                                    MessageBoxButtons.OK);
+
+                    MessageBox.Show("Wait time for Process " + (current + 1) + " : " + wt,
+                                    "Wait time for Process " + (current + 1),
+                                    MessageBoxButtons.OK);
+                }
                 }
                 averageWaitTime = Convert.ToInt64(waitTime / np);
                 averageTurnaroundTime = Convert.ToInt64(turnaroundTime / np);
