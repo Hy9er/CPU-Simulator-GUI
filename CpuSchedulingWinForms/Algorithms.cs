@@ -347,7 +347,8 @@ namespace CpuSchedulingWinForms
             int np = Convert.ToInt16(userInput);
             int i, counter = 0;
             double total = 0.0;
-           
+            double totalRunning = 0.0;
+
             double waitTime = 0, turnaroundTime = 0;
             double averageWaitTime, averageTurnaroundTime;
 
@@ -405,6 +406,7 @@ namespace CpuSchedulingWinForms
 
                     temp[smallest] -= 1;
                     total++;
+                    totalRunning++;
 
                     if (temp[smallest] == 0)
                     {
@@ -435,9 +437,13 @@ namespace CpuSchedulingWinForms
 
             averageWaitTime = Convert.ToInt64(waitTime / np);
             averageTurnaroundTime = Convert.ToInt64(turnaroundTime / np);
+            double utilization = (totalRunning / total) * 100;
+            double throughput = np / total;
 
             MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
             MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
+            MessageBox.Show("CPU Utilization for " + np + " processes: " + utilization + " %", "", MessageBoxButtons.OK);
+            MessageBox.Show("Throughput for " + np + " processes: " + throughput + " sec(s)", "", MessageBoxButtons.OK);
 
         }
         //Highest Response Ratio Next
@@ -446,6 +452,7 @@ namespace CpuSchedulingWinForms
             int np = Convert.ToInt16(userInput);
             int i, counter = 0;
             double total = 0.0;
+            double totalRunning = 0.0;
 
             double waitTime = 0, turnaroundTime = 0;
             double averageWaitTime, averageTurnaroundTime;
@@ -506,6 +513,7 @@ namespace CpuSchedulingWinForms
                         }
 
                         total += burstTime[current];
+                        totalRunning += burstTime[current];
                         double tat = total - arrivalTime[current];
                         double wt = tat - burstTime[current];
 
@@ -519,10 +527,14 @@ namespace CpuSchedulingWinForms
                 }
                 averageWaitTime = Convert.ToInt64(waitTime / np);
                 averageTurnaroundTime = Convert.ToInt64(turnaroundTime / np);
+                double utilization = (totalRunning / total) * 100;
+                double throughput = np / total;
 
                 MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
                 MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
-            }          
+                MessageBox.Show("CPU Utilization for " + np + " processes: " + utilization + " %", "", MessageBoxButtons.OK);
+                MessageBox.Show("Throughput for " + np + " processes: " + throughput + " sec(s)", "", MessageBoxButtons.OK);
+        }          
 
     }
 }
