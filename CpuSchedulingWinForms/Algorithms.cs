@@ -341,7 +341,7 @@ namespace CpuSchedulingWinForms
             }
 
         }
-
+        //Shortest Remaining Time First
         public static void SRTF(string userInput)
         {
             int np = Convert.ToInt16(userInput);
@@ -396,7 +396,7 @@ namespace CpuSchedulingWinForms
                             smallest = i;
                         }
                     }
-
+                    //goes back to while loop start
                     if (smallest == -1)
                     {
                         total++; 
@@ -440,12 +440,89 @@ namespace CpuSchedulingWinForms
             MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
 
         }
-
+        //Highest Response Ratio Next
         public static void HRRN(string userInput)
         {
+            int np = Convert.ToInt16(userInput);
+            int i, counter = 0;
+            double total = 0.0;
 
-        }
+            double waitTime = 0, turnaroundTime = 0;
+            double averageWaitTime, averageTurnaroundTime;
 
+            double[] arrivalTime = new double[np];
+            double[] burstTime = new double[np];
+            
+            bool[] finished = new bool[np];
+            int x = np;
+
+            DialogResult result = MessageBox.Show("Highest Response Ratio Next Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                for (i = 0; i < np; i++)
+                {
+                    string arrivalInput =
+                        Microsoft.VisualBasic.Interaction.InputBox("Enter arrival time: ",
+                                                           "Arrival time for P" + (i + 1),
+                                                           "",
+                                                           -1, -1);
+
+                    arrivalTime[i] = Convert.ToDouble(arrivalInput);
+
+                    string burstInput =
+                        Microsoft.VisualBasic.Interaction.InputBox("Enter burst time: ",
+                                                           "Burst time for P" + (i + 1),
+                                                           "",
+                                                           -1, -1);
+
+                    burstTime[i] = Convert.ToDouble(burstInput);
+                }
+
+                    while (counter != np)
+                    {
+                        int current = -1;
+                        double maxResponse = -1;
+
+                        for (i = 0; i < np; i++)
+                        {
+                            if (!finished[i] && arrivalTime[i] <= total)
+                            {
+                                double waitingTime = total - arrivalTime[i];
+                                double responseRatio = (waitingTime + burstTime[i]) / burstTime[i];
+
+                                if (responseRatio > maxResponse)
+                                {
+                                    maxResponse = responseRatio;
+                                current = i;
+                                }
+                            }
+                        }
+                        //goes back to while loop start
+                        if (current == -1)
+                        {
+                            total++; 
+                            continue;
+                        }
+
+                        total += burstTime[current];
+                        double tat = total - arrivalTime[current];
+                        double wt = tat - burstTime[current];
+
+                        turnaroundTime += tat;
+                        waitTime += wt;
+                        finished[current] = true;
+                        counter++;
+
+                        MessageBox.Show("Process " + (current + 1) + " completed.\nTAT = " + tat + "\nWT = " + wt, "Process Info", MessageBoxButtons.OK);
+                    }
+                }
+                averageWaitTime = Convert.ToInt64(waitTime / np);
+                averageTurnaroundTime = Convert.ToInt64(turnaroundTime / np);
+
+                MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
+                MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
+            }          
 
     }
 }
